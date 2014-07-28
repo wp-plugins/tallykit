@@ -1,14 +1,14 @@
 === TallyKit ===
 Contributors: tallythemes
 Donate link: http://tallythemes.com/
-Tags: portfolio, faq, testimonials, slideshow, people, shortcodes, woocommerce, bbpress, buddypress, edd, cart66, doc, image gallery, logos, pricing table
+Tags: portfolio, faq, testimonials, slideshow, people, shortcodes, gallery, logos
 Requires at least: 3.8
 Tested up to: 3.9.1
-Stable tag: 1.6
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A collection of features and functionality for Tally Framework theme.
+A collection of features and functionality for Tally Framework Theme.
 
 == Description ==
 ####NOTE: This plugin requires Tally Framework Theme
@@ -38,28 +38,10 @@ The simplest way to install is to click on 'Plugins' then 'Add' and type 'tallyk
 
 == Changelog ==
 
-= 0.8 =
-* Initial commit
-
-= 0.9 =
-* Add New Blog Sshortcode
-* Add export import functionality to the parallax component
-
-= 1.0 =
-* Added new shortcode "Blog Grid"
-* Added export import functionality to the parallax component
-* Fixed some textdomain string issue
-* Improve Portfolio single page Video and image placement
-* Update Portfolio Metabox
-* Improve Portfolio CSS
-* Change Testimonial component images size
+= 1.7 =
 * Update ACOC framework
-* Improve Slideshow CSS
-* Improve Slideshow JavaScript
-* Improve Slideshow coloring option
-* Improve Slideshow Template design
-
-
+* Added Blog Timeline shortcode
+* Bug fix on template loader
 
 = 1.6 =
 * fix portfolio image size
@@ -83,3 +65,26 @@ The simplest way to install is to click on 'Plugins' then 'Add' and type 'tallyk
 
 = 1.1 =
 * Maintenance Release 
+
+= 1.0 =
+* Added new shortcode "Blog Grid"
+* Added export import functionality to the parallax component
+* Fixed some textdomain string issue
+* Improve Portfolio single page Video and image placement
+* Update Portfolio Metabox
+* Improve Portfolio CSS
+* Change Testimonial component images size
+* Update ACOC framework
+* Improve Slideshow CSS
+* Improve Slideshow JavaScript
+* Improve Slideshow coloring option
+* Improve Slideshow Template design
+
+
+= 0.9 =
+* Add New Blog shortcode
+* Add export import functionality to the parallax component
+
+
+= 0.8 =
+* Initial commit
