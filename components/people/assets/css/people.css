@@ -1,0 +1,46 @@
+.tk_people_item_details{padding: 15px 0px 0px;text-align: center;position:relative;}
+.tk_people_item_details .tk_people_item_heading{width: 100%;height: auto;line-height: 22px;font-size: 18px;margin: 0px;padding: 0px;display: inline-block;	}
+.tk_people_item_details .tk_people_item_heading a{ color: #585656; }
+.tk_people_item_details .tk_people_item_heading a:hover{ text-decoration:none; }
+.tk_people_item_details .tk_people_item_social{position: absolute;width: 100%;top: -35px;}
+.tk_people_item_details .tk_people_item_social .tallykit-people-soicalIcon{display: inline-block;width: 21px;height: 21px;border-radius: 50%;margin: 0 4px 4px 0px;color: inherit;	background-color:rgba(0, 0, 0, 0.43);}
+.tk_people_item_details .tk_people_item_social .tallykit-people-soicalIcon i.fa {line-height: 20px;font-size: 11px;color: #FFF !important;}
+.tk_people_item_details .tk_people_item_social .tallykit-people-soicalIcon:hover{ background-color:#000; }
+.tk_people_item_image img {-moz-box-shadow: 0px 1px 7px rgba(0,0,0,.3);-webkit-box-shadow: 0px 1px 7px rgba(0,0,0,.3);box-shadow: 0px 1px 7px rgba(0,0,0,.3);}
+.tallykit_people_item:hover .tk_people_item_image img {-moz-box-shadow: 4px 6px 14px rgba(0,0,0,.6);-webkit-box-shadow: 4px 6px 14px rgba(0,0,0,.6);box-shadow: 4px 6px 14px rgba(0,0,0,.6);}
+
+
+
+/*-----------------------------------------------------
+Carousel
+-----------------------------------------------------*/
+.tallykit_people_carousel{  }
+.tallykit_people_carousel.acoc-fx-nav-valign-top .wfs-direction-nav{ top:-25px; }
+.tallykit_people_carousel.acoc-fx-nav-align-right .wfs-direction-nav{ right:0px; }
+.tallykit_people_carousel.acoc-fx-cnav-valign-top .wfs-control-nav{ top:-15px; }
+.tallykit_people_carousel.acoc-fx-cnav-align-left .wfs-control-nav{ left:0; }
+.tallykit_people_carousel.acoc-fx-nav-style-border .wfs-direction-nav a{ height: 14px; width: 14px; line-height: 14px; }
+
+
+
+/*-----------------------------------------------------
+Single Page
+-----------------------------------------------------*/
+.tk_people_single_content{ width: 62%; display: inline-block; float: right ;}
+.tk_people_single_info{ width: 34.2%; display: inline-block; float: left; }
+.tk_people_single_info .tk_people_image{ position:relative; margin-bottom:20px; }
+.tk_people_single_info .tk_people_image h3 { position:absolute; bottom:0; left:0; color:#FFF !important; font-size:17px; display:block; background:rgba(0,0,0,0.4); text-align:center; margin:0; width:100%; font-weight:normal; padding-bottom:5px; padding-top:5px; }
+
+.tk_people_single_info ul{ margin-left:0px; }
+.tk_people_single_info ul li {
+border-bottom: 1px solid rgba(231, 231, 231, 0.46);
+padding-bottom: 15px;
+margin-bottom: 15px;
+overflow: hidden;
+list-style: none;
+margin-left: 0px;
+}
+.tk_people_single_info ul li strong { display: inline-block; width: 40%; float: left;}
+.tk_people_single_info ul li .people_tk { width: 55%; float: right; }
+
+.tk-people-icon{ border: solid 2px; height:24px; width:24px; display:inline-block; text-align:center; line-height:24px; font-size:12px; margin-right:5px; border-radius:50%; }
