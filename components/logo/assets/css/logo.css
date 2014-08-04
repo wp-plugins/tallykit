@@ -1,0 +1,39 @@
+.tallykit_logo_item{position: relative;border: solid 1px #EAE9E9;background-color: #F4F4F4;}
+.tallykit_logo_item .tallykit_logo_item-d img {max-width: 100%;border-radius: 0;box-shadow: 0 1px 4px rgba(0, 0, 0, 0);width: 100%;}
+.tallykit_logo_item .tallykit_logo_item_image{position: absolute;height: 100%;width: 100%;text-align: center;text-decoration: none;vertical-align: middle;top: 0px;}
+.tallykit_logo_item .tallykit_logo_item_image:before {content: '';display: inline-block;height: 100%;vertical-align: middle;}
+.tallykit_logo_item .tallykit_logo_item_image .tk-item-content{display: inline-block;width: 90%;vertical-align: middle;height: auto;}
+
+/*-----------------------------------------------------
+Carousel
+-----------------------------------------------------*/
+.tallykit_logo_carousel{ margin-top:25px; }
+.tallykit_logo_carousel .wfs-direction-nav,
+.tallykit_logo_carousel .wfs-control-nav{ opacity:0.5; }
+.tallykit_logo_carousel .wfs-direction-nav a:hover,
+.tallykit_logo_carousel .wfs-control-nav a:hover{ opacity:0.8; }
+.tallykit_logo_carousel.acoc-fx-nav-valign-top .wfs-direction-nav{ top:-25px; }
+.tallykit_logo_carousel.acoc-fx-nav-align-right .wfs-direction-nav{ right:0px; }
+.tallykit_logo_carousel.acoc-fx-cnav-valign-top .wfs-control-nav{ top:-15px; }
+.tallykit_logo_carousel.acoc-fx-cnav-align-left .wfs-control-nav{ left:0; }
+.tallykit_logo_carousel.acoc-fx-nav-style-border .wfs-direction-nav a{ height: 14px; width: 14px; line-height: 14px; }
+
+.tallykit_logo_carousel_item a {
+	display: block;
+	height: auto;
+	float: left;
+	position: relative;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	left: 50%;
+}
+
+
+
+
+/*----------------------------------------------------
+Slidershow
+-----------------------------------------------------*/
