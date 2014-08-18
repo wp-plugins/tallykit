@@ -4,7 +4,7 @@ Donate link: http://tallythemes.com/
 Tags: portfolio, faq, testimonials, slideshow, people, shortcodes, gallery, logos
 Requires at least: 3.8
 Tested up to: 3.9.1
-Stable tag: 2.3
+Stable tag: 2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,21 @@ The simplest way to install is to click on 'Plugins' then 'Add' and type 'tallyk
 
 
 == Changelog ==
+
+= 2.4 =
+* Update Gallery component image handler
+* Improve Gallery CSS design
+* Fix PHP error on Parallax Component
+
+* Improve Slideshow color styling
+* Improve Slideshow Template design
+* update acoc framework
+
+* Remove Some unused files
+* Update theme compact loader class
+
+* Use Featured image for images
+* improve Blog Timeline shortcode CSS
 
 = 2.3 =
 * Fix gallery template issue.
