@@ -135,7 +135,7 @@ $tinymce_fields[] = array(
 			'id' => 'border_color',
 			'class' => '',
 			'label' => 'Border Color',
-			'type' => 'text',
+			'type' => 'color',
 			'std' => '',
 			'des' => '',
 		),
@@ -191,6 +191,30 @@ $tinymce_fields[] = array(
 			'class' => '',
 			'label' => 'ID',
 			'type' => 'text',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'text_color',
+			'class' => '',
+			'label' => 'Text Color',
+			'type' => 'color',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'heading_color',
+			'class' => '',
+			'label' => 'Heading Color',
+			'type' => 'color',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'border_color',
+			'class' => '',
+			'label' => 'Border Color',
+			'type' => 'color',
 			'std' => '',
 			'des' => '',
 		),
@@ -274,6 +298,22 @@ $tinymce_fields[] = array(
 			'std' => 'Sample content for the Alart box.',
 			'des' => '',
 			'content' => 'yes',//yes, no
+		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_duration',
+			'class' => '',
+			'label' => 'Animation Duration',
+			'type' => 'text',
+			'std' => '',
+			'des' => '',
 		),
 	)
 );
@@ -396,6 +436,22 @@ $tinymce_fields[] = array(
 				array('value' => 'yes', 'label' => 'yes'),
 			)
 		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_duration',
+			'class' => '',
+			'label' => 'Animation Duration',
+			'type' => 'text',
+			'std' => '',
+			'des' => '',
+		),
 	)
 );
 
@@ -470,6 +526,22 @@ $tinymce_fields[] = array(
 </ul>',
 			'des' => '',
 			'content' => 'yes',
+		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_duration',
+			'class' => '',
+			'label' => 'Animation Duration',
+			'type' => 'text',
+			'std' => '',
+			'des' => '',
 		),
 	)
 );
@@ -582,6 +654,22 @@ $tinymce_fields[] = array(
 				array('value' => 'right', 'label' => 'right'),
 				array('value' => 'center', 'label' => 'center'),
 			)
+		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_duration',
+			'class' => '',
+			'label' => 'Animation Duration',
+			'type' => 'text',
+			'std' => '',
+			'des' => '',
 		),
 		
 	)
@@ -778,6 +866,22 @@ $tinymce_fields[] = array(
 				array('value' => '_self', 'label' => '_self'),
 				array('value' => '_blank', 'label' => '_blank'),
 			)
+		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_duration',
+			'class' => '',
+			'label' => 'Animation Duration',
+			'type' => 'text',
+			'std' => '',
+			'des' => '',
 		),
 	)
 );
@@ -1112,6 +1216,22 @@ $tinymce_fields[] = array(
 			'std' => '3',
 			'des' => '',
 		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_duration',
+			'class' => '',
+			'label' => 'Animation Duration',
+			'type' => 'text',
+			'std' => '',
+			'des' => '',
+		),
 	)
 );
 
@@ -1259,6 +1379,22 @@ $tinymce_fields[] = array(
 			'std' => '#f0f0f0',
 			'des' => '',
 		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_duration',
+			'class' => '',
+			'label' => 'Animation Duration',
+			'type' => 'text',
+			'std' => '',
+			'des' => '',
+		),
 	)
 );
 
@@ -1301,6 +1437,22 @@ $tinymce_fields[] = array(
 			'des' => '',
 			'content' => 'yes',//yes, no
 		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_duration',
+			'class' => '',
+			'label' => 'Animation Duration',
+			'type' => 'text',
+			'std' => '',
+			'des' => '',
+		),
 	)
 );
 
@@ -1341,6 +1493,22 @@ $tinymce_fields[] = array(
 			'label' => 'Unfilled Color',
 			'type' => 'text',
 			'std' => '#f0f0f0',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_duration',
+			'class' => '',
+			'label' => 'Animation Duration',
+			'type' => 'text',
+			'std' => '',
 			'des' => '',
 		),
 	)
@@ -1644,6 +1812,73 @@ $tinymce_fields[] = array(
 			'id' => 'class',
 			'class' => '',
 			'label' => 'class',
+			'type' => 'text',
+			'std' => '',
+			'des' => '',
+		),
+	)
+);
+
+
+/*---------|- Heading -|----------*/
+$tinymce_fields[] = array(
+	'title' => 'Heading',
+	'shortcode' => 'tk_heading',
+	'content' => 'yes',//yes, no
+	'fields' => array(
+		array(
+			'id' => 'tag',
+			'class' => '',
+			'label' => 'Tag',
+			'type' => 'select',
+			'std' => 'h2',
+			'des' => '',
+			'options' => array(
+				array('value' => 'h1', 'label' => 'H1'),
+				array('value' => 'h2', 'label' => 'H2'),
+				array('value' => 'h3', 'label' => 'H3'),
+				array('value' => 'h4', 'label' => 'H4'),
+				array('value' => 'h5', 'label' => 'H5'),
+				array('value' => 'h6', 'label' => 'H6'),
+			)
+		),
+		array(
+			'id' => 'content',
+			'class' => '',
+			'label' => 'Content',
+			'type' => 'textarea',
+			'std' => 'Sample Heading is Here.',
+			'des' => '',
+			'content' => 'yes',//yes, no
+		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_type',
+			'class' => '',
+			'label' => 'Animation Type',
+			'type' => 'animate_css_select',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'animation_duration',
+			'class' => '',
+			'label' => 'Animation Duration',
+			'type' => 'text',
+			'std' => '',
+			'des' => '',
+		),
+		array(
+			'id' => 'id',
+			'class' => '',
+			'label' => 'ID',
 			'type' => 'text',
 			'std' => '',
 			'des' => '',

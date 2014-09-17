@@ -3,8 +3,8 @@ Contributors: tallythemes
 Donate link: http://tallythemes.com/
 Tags: portfolio, faq, testimonials, slideshow, people, shortcodes, gallery, logos
 Requires at least: 3.8
-Tested up to: 3.9.1
-Stable tag: 2.6
+Tested up to: 4.0
+Stable tag: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,17 @@ The simplest way to install is to click on 'Plugins' then 'Add' and type 'tallyk
 
 
 == Changelog ==
+
+= 3.0 =
+* Update ACOC Framework
+* Improve column shortcode
+* Improve row shortcode
+* Improve slideshow component's UI and shortcode
+* ADDed a new component "BuddyPress"
+* Added Scrolling effect on shortcode component
+* Fix typo in people component
+* Fix a PHP error on Gallery component
+* Update shortcode of gallery component
 
 = 2.6 =
 * Improve Row Shortcode

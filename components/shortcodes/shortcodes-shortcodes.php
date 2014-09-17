@@ -16,6 +16,9 @@ function tallykit_shortcodes_sc_row( $atts, $content = null  ) {
 		'color_mood' => '',
 		'width' => '',
 		'menu_anchor' => '',
+		'heading_color' => '',
+		'text_color' => '',
+		'inner_border_color' => '',
 		'bg_color' => '',
 		'bg_image' => '',
 		'bg_repeat' => '',
@@ -33,24 +36,39 @@ function tallykit_shortcodes_sc_row( $atts, $content = null  ) {
 	), $atts ) );
 	
 	$output = '';
+	$rand = 'tallykit-shortcode-row-'.rand();
 	
 	$style = '';
-	$style .= 'background-color:'.$bg_color.'; ';
-	$style .= 'background-image:url('.$bg_image.'); ';
-	$style .= 'background-repeat:'.$bg_repeat.'; ';
-	$style .= 'background-attachment:'.$bg_attachment.'; ';
-	$style .= 'background-position:'.$bg_position.'; ';
-	$style .= 'background-size:'.$bg_size.'; ';
-	$style .= 'border-top:'.$border_size.'; border-bottom:'.$border_size.'; ';
-	$style .= 'border-color:'.$border_color.'; ';
-	$style .= 'border-style:'.$border_style.'; ';
-	$style .= 'padding-top:'.$padding_top.'; ';
-	$style .= 'padding-bottom:'.$padding_bottom.'; ';
-	$style .= 'text-align:'.$text_align.'; ';
-	$the_width = '';
-	if( $width == '100%' ){ $the_width = 'width:100%;'; }
+	if($bg_color){ $style .= 'background-color:'.$bg_color.'; '; }
+	if($bg_image){ $style .= 'background-image:url('.$bg_image.'); '; }
+	if($bg_repeat){ $style .= 'background-repeat:'.$bg_repeat.'; '; }
+	if($bg_attachment){ $style .= 'background-attachment:'.$bg_attachment.'; '; }
+	if($bg_position){ $style .= 'background-position:'.$bg_position.'; '; }
+	if($bg_size){ $style .= 'background-size:'.$bg_size.'; '; }
+	if($border_size){ $style .= 'border-top:'.$border_size.'; border-bottom:'.$border_size.'; '; }
+	if($border_color){ $style .= 'border-color:'.$border_color.'; '; }
+	if($border_style){ $style .= 'border-style:'.$border_style.'; '; }
+	if($padding_top){ $style .= 'padding-top:'.$padding_top.'; '; }
+	if($padding_bottom){ $style .= 'padding-bottom:'.$padding_bottom.'; '; }
+	if($text_align){ $style .= 'text-align:'.$text_align.'; '; }
 	
-	$output .= '<div class="tallykit-shortcode-row '.$class.' color_mood_'.$color_mood.'" style="'.$style.' ">';
+	$the_width = '';
+	if( $width == '100%' ){ $the_width = 'width:100%;'; }	
+	
+	$output .= '<style type="text/css">';
+		if($text_color){ $output .= '#'.$rand.'{ color:'.$text_color.'; }'; }
+		if($inner_border_color){ $output .= '#'.$rand.' *{ border-color:'.$inner_border_color.'; }'; }
+		if($text_color){ $output .= '#'.$rand.' *{ color:'.$text_color.'; }'; }
+		if($heading_color){ $output .= '#'.$rand.' h1{ color:'.$heading_color.'; }'; }
+		if($heading_color){ $output .= '#'.$rand.' h2{ color:'.$heading_color.'; }'; }
+		if($heading_color){ $output .= '#'.$rand.' h3{ color:'.$heading_color.'; }'; }
+		if($heading_color){ $output .= '#'.$rand.' h4{ color:'.$heading_color.'; }'; }
+		if($heading_color){ $output .= '#'.$rand.' h5{ color:'.$heading_color.'; }'; }
+		if($heading_color){ $output .= '#'.$rand.' h6{ color:'.$heading_color.'; }'; }
+	$output .= '</style>';
+	
+	$output .= '<div id="'.$id.'"></div>';
+	$output .= '<div class="tallykit-shortcode-row '.$class.' color_mood_'.$color_mood.'" style="'.$style.' " id="'.$rand.'">';
 		$output .= '<div class="tk-shortcode-row-inner" style="max-width:'.$width.'; '.$the_width.'">';
 			$output .= do_shortcode($content);
 		$output .= '</div>';
@@ -107,11 +125,14 @@ function tallykit_shortcodes_sc_alert( $atts, $content = null  ) {
 		'title' => '',
 		'type' => 'info', //danger, success, error, info, 
 		'close' => 'yes',
+		
+		'animation_type' => '',
+		'animation_duration' => '0.5s',
 	), $atts ) );
 	
 	$output = '';
 	
-	$output .= '<div class="tallykit-shortcode-alert tallykit-shortcode-alert-block tallykit-shortcode-alert-'.$type.'">';
+	$output .= '<div class="tallykit-shortcode-alert tallykit-shortcode-alert-block tallykit-shortcode-alert-'.$type.' wow '.$animation_type.'" data-wow-duration="'.$animation_duration.'" data-wow-offset="0">';
 		if( $close == 'yes'){ $output .= '<div class="tallykit-shortcode-alert-close">×</div>'; }
 		if( $title != ''){ $output .= '<h4 class="tallykit-shortcode-alert-heading">'.$title.'</h4>'; }
 		$output .= do_shortcode($content);
@@ -138,6 +159,8 @@ function tallykit_shortcodes_sc_button( $atts, $content = null ) {
 		'icon_right'	=> '',
 		'id'	        => '',
 		'full_width'    => 'no', //yes, no
+		'animation_type' => '',
+		'animation_duration' => '0.5s',
 	), $atts ) );
 	
 	$output = '';
@@ -154,7 +177,7 @@ function tallykit_shortcodes_sc_button( $atts, $content = null ) {
 	//class
 	$icon_left_class = ($icon_left) ? 'icon-left' : NULL;
 	$icon_right_class = ($icon_right) ? 'icon-right' : NULL;
-	$button_class = 'class="tallykit-shortcode-button '.$class.' style-'.$style.' size-'.$size.' color-'.$color.' full-width-'.$full_width.' '.$icon_left_class.' '.$icon_right_class.'" ';
+	$button_class = 'class="tallykit-shortcode-button '.$class.' style-'.$style.' size-'.$size.' color-'.$color.' full-width-'.$full_width.' '.$icon_left_class.' '.$icon_right_class.' wow '.$animation_type.'" data-wow-duration="'.$animation_duration.'" data-wow-offset="0"  ';
 		
 	$output .= '<a href="'.$link.'" '.$button_class.$rel.$target.$id.'>'.$icon_left.$text.$icon_right.'</a>';
 	
@@ -171,7 +194,9 @@ function tallykit_shortcodes_sc_checklist( $atts, $content = null ) {
 		'iconcolor' => 'initial',
 		'iconbg' => 'rgba(0,0,0,0)',
 		'iconsize' => '9px',
-		'circle' => 'yes'
+		'circle' => 'yes',
+		'animation_type' => '',
+		'animation_duration' => '0.5s',
 	), $atts));
 	
 	$rand = rand();
@@ -182,7 +207,7 @@ function tallykit_shortcodes_sc_checklist( $atts, $content = null ) {
 	#tallykit-shortcode-checklist-".$rand." ul li:before{font-size:{$iconsize} !important;}
 	</style>";
 	
-	$output .= '<div class="tallykit-shortcode-checklist tallykit-shortcode-checklist-circle-'.$circle.' tallykit-shortcode-checklist-icon-'.$icon.'" id="tallykit-shortcode-checklist-'.$rand.'">';
+	$output .= '<div class="tallykit-shortcode-checklist tallykit-shortcode-checklist-circle-'.$circle.' tallykit-shortcode-checklist-icon-'.$icon.' wow '.$animation_type.'" data-wow-duration="'.$animation_duration.'" data-wow-offset="0" id="tallykit-shortcode-checklist-'.$rand.'">';
 		$output .= do_shortcode($content);
 	$output .= '</div>';
 	
@@ -204,12 +229,16 @@ function tallykit_shortcodes_sc_column( $atts, $content = null ){
 		'heading_color' => '',
 		'link_color' => '',
 		'padding' => '',
+		
+		'animation_type' => '',
+		'animation_duration' => '0.5s',
 	  ), $atts ) );
 		  
 	  $output = '';
 	  $uid = 'tallykit-shortcode-column'.rand();
-	  $bg_color = ($bg_color) ? 'background-color:'.$bg_color.';' : '';
+	  $bg_color = ($bg_color) ? 'background-color:'.$bg_color.'; ' : '';
 	  $padding = ($padding) ? 'padding:'.$padding.';' : '';
+	  $text_align = ($text_align) ? 'text-align:'.$text_align.'; ' : '';
 		  
 	  $output .= '<style type="text/css">
 				#'.$uid.'{ color:'.$text_color.'; }
@@ -217,7 +246,7 @@ function tallykit_shortcodes_sc_column( $atts, $content = null ){
 				#'.$uid.' h1, #'.$uid.' h2, #'.$uid.' h3, #'.$uid.' h4, #'.$uid.' h5, #'.$uid.' h6{ color:'.$heading_color.'; }
 			</style>';
 		  
-	$output .= '<div id="'.$uid.'" class="tallykit-shortcode-column tallykit-shortcode-' . $size . ' tallykit-shortcode-column-'.$position.' '. $class .'" style="'.$bg_color.'">';
+	$output .= '<div id="'.$uid.'" class="tallykit-shortcode-column tallykit-shortcode-' . $size . ' tallykit-shortcode-column-'.$position.' '. $class .' wow '.$animation_type.'" data-wow-duration="'.$animation_duration.'" data-wow-offset="0" style="'.$bg_color.$text_align.'">';
 		$output .= '<div class="tallykit-shortcode-column-inner" style="'.$padding.'">' . do_shortcode($content) . '</div>';
 	$output .= '</div>';
 	if($position == 'last'){$output .= '<div class="acoc-clear"></div><div class="tallykit-shortcode-clear"></div><div class="acoc-clear"></div>';}
@@ -276,6 +305,9 @@ function tallykit_shortcodes_sc_icon( $atts, $content = null ) {
 		'align' => '', //none, left, right, center
 		'link' => '',
 		'link_target' => '_self', //_blank, _self
+		
+		'animation_type' => '',
+		'animation_duration' => '0.5s',
 	), $atts));
 	
 	$output = '';
@@ -288,7 +320,7 @@ function tallykit_shortcodes_sc_icon( $atts, $content = null ) {
 	</style>';
 	
 	if(!empty($link)){ $output .= '<a href="'.$link.'" target="'.$link_target.'">'; }
-	$output .= '<i class="tallykit-shortcode-icon  tallykit-shortcode-icon-shape-'.$shape.'  tallykit-shortcode-icon-size-'.$size.' tallykit-shortcode-icon-effect-'.$effect.' tallykit-shortcode-icon-align-'.$align.' tallykit-shortcode-icon-style-'.$style.' fa '.$icon.'" id="tallykit-shortcode-icon-'.$rand.'"></i>';
+	$output .= '<i class="tallykit-shortcode-icon  tallykit-shortcode-icon-shape-'.$shape.'  tallykit-shortcode-icon-size-'.$size.' tallykit-shortcode-icon-effect-'.$effect.' tallykit-shortcode-icon-align-'.$align.' tallykit-shortcode-icon-style-'.$style.' fa '.$icon.' wow '.$animation_type.'" data-wow-duration="'.$animation_duration.'" data-wow-offset="0" id="tallykit-shortcode-icon-'.$rand.'"></i>';
 	if(!empty($link)){ $output .= '</a>'; }
 	
 	return $output;	
@@ -426,6 +458,9 @@ function tallykit_shortcodes_sc_blog_grid( $atts, $content = null ) {
 			'margin'		   => '3',
 			'columns'          => '3',
 			'pagination'          => 'yes',
+			
+			'animation_type' => '',
+			'animation_duration' => '0.5s',
 		), $atts)
 	);
 	
@@ -523,11 +558,13 @@ function tallykit_shortcodes_sc_tk_progress_bar($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'filled_color' => '#45b900',
 		'unfilled_color' => '#f0f0f0',
-		'value' => '70'
+		'value' => '70',
+		'animation_type' => '',
+		'animation_duration' => '0.5s',
 	), $atts));
 
 	$output = '';
-	$output .= '<div class="tallykit-shortcode-progressBar" style="background-color:'.$unfilled_color.' !important;border-color:'.$unfilled_color.' !important;">';
+	$output .= '<div class="tallykit-shortcode-progressBar wow '.$animation_type.'" data-wow-duration="'.$animation_duration.'" data-wow-offset="0" style="background-color:'.$unfilled_color.' !important;border-color:'.$unfilled_color.' !important;">';
 		$output .= '<div class="tallykit-shortcode-progressBar-content" data-percentage="'.$value.'" style="width: ' . $value . '%;background-color:'.$filled_color.' !important;border-color:'.$filled_color.' !important;">';
 		$output .= '</div>';
 		$output .= '<span class="tallykit-shortcode-progressBar-title">' . $content .'</span>';
@@ -545,13 +582,15 @@ function tallykit_shortcodes_sc_tk_counter_box($atts, $content = null) {
 		'value' => '70',
 		'prefix' => '',
 		'suffix' => '',
+		'animation_type' => '',
+		'animation_duration' => '0.5s',
 	), $atts));
 	
 	if($prefix){ $prefix = '<span class="prefix">'.$prefix.'</span>'; }
 	if($suffix){ $prefix = '<span class="suffix">'.$suffix.'</span>'; }
 
 	$output = '';
-	$output .= '<div class="tallykit-shortcode-counterBox-wrapper">';
+	$output .= '<div class="tallykit-shortcode-counterBox-wrapper wow '.$animation_type.'" data-wow-duration="'.$animation_duration.'" data-wow-offset="0">';
 		$output .= '<div class="tallykit-shortcode-counterBox-percentage">';
 			$output .= $prefix.'<span class="display-percentage" data-percentage="'.$value.'">0</span>'.$suffix;
 		$output .= '</div>';
@@ -571,7 +610,9 @@ function tallykit_shortcodes_sc_tk_counter_circle($atts, $content = null) {
 	extract(shortcode_atts(array(
 		'filled_color' => '#45b900',
 		'unfilled_color' => '#f1f1f1',
-		'value' => '70'
+		'value' => '70',
+		'animation_type' => '',
+		'animation_duration' => '0.5s',
 	), $atts));
 
 	$uid = 'tallykit_shortcode_CounterCircle'.rand();
@@ -595,7 +636,7 @@ function tallykit_shortcodes_sc_tk_counter_circle($atts, $content = null) {
 	</script>";
 
 
-	$output .= '<div class="tallykit-shortcode-CounterCircle-wrapper">';
+	$output .= '<div class="tallykit-shortcode-CounterCircle-wrapper wow '.$animation_type.'" data-wow-duration="'.$animation_duration.'" data-wow-offset="0">';
 		$output .= '<canvas width="220" height="220" class="tallykit-shortcode-CounterCircle" id="'.$uid.'">';
 		$output .= '</canvas>';
 		$output .= '<div class="tallykit-shortcode-CounterCircle-content">';
@@ -854,4 +895,22 @@ function tallykit_shortcodes_sc_blog_timeline($atts, $content = null) {
 	ob_end_clean();
 	
 	return 	$output;
+}
+
+
+
+/*---------|- audio -|-------------------------------------*/
+add_shortcode('tk_heading', 'tallykit_shortcodes_sc_heading');
+function tallykit_shortcodes_sc_heading($atts, $content = null) {
+	extract(shortcode_atts(array(
+		'tag' => 'h2',
+		'class' => '',
+		'id' => '',
+		'animation_type' => '',
+		'animation_duration' => '0.5s',
+	), $atts));
+	
+	$output = '<'.$tag.' class="'.$class.' wow '.$animation_type.'" id="'.$id.'" data-wow-duration="'.$animation_duration.'" data-wow-offset="0">'.do_shortcode($content).'</'.$tag.'>';
+	
+	return $output;
 }
