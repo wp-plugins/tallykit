@@ -1,13 +1,13 @@
 <?php
-class tallykit_FrontPage_block_option_accordion{
+class tallykit_FrontPage_block_option_text{
 	public $section;
 	public $section_name;
 	public $prefix;
 	
 	function __construct(){
-		$this->section = 'home_page_accordion';
-		$this->section_name = 'Home Accordion';
-		$this->prefix = 'home_page_accordion_';
+		$this->section = 'home_page_text';
+		$this->section_name = 'Home Text';
+		$this->prefix = 'home_page_text_';
 		add_filter('option_tree_settings_args', array($this, 'options'), 20);
 	}
 	
@@ -17,7 +17,7 @@ class tallykit_FrontPage_block_option_accordion{
 		
 		$custom_settings['settings'][] = array(
 			'id'          => $this->prefix.'enable',
-			'label'       => __('Enable Accordion', 'tallykit_taxdomain'),
+			'label'       => __('Enable Text', 'tallykit_taxdomain'),
 			'desc'        => '',
 			'std'         => tally_option_std($this->prefix.'enable'),
 			'type'        => 'on_off',
@@ -26,8 +26,7 @@ class tallykit_FrontPage_block_option_accordion{
 			'post_type'   => '',
 			'taxonomy'    => '',
 			'class'       => '',
-		);
-		
+		);	
 		$custom_settings['settings'][] = array(
 			'id'          => $this->prefix.'title',
 			'label'       => __('Title', 'tallykit_taxdomain'),
@@ -41,37 +40,22 @@ class tallykit_FrontPage_block_option_accordion{
 			'class'       => '',
 			'condition'   => $this->prefix.'enable'.':is(on)',
 			'settings'    => '',
-		);
-		
+		);		
 		$custom_settings['settings'][] = array(
-			'id'          => $this->prefix.'items',
-			'label'       => __('Accordion Items', 'tallykit_taxdomain'),
+			'id'          => $this->prefix.'content',
+			'label'       => __('Content', 'tallykit_taxdomain'),
 			'desc'        => '',
-			'std'         => tally_option_std($this->prefix.'items'),
-			'type'        => 'list-item',
+			'std'         => tally_option_std($this->prefix.'content'),
+			'type'        => 'textarea',
 			'section'     => $this->section,
 			'rows'        => '',
 			'post_type'   => '',
 			'taxonomy'    => '',
 			'class'       => '',
 			'condition'   => $this->prefix.'enable'.':is(on)',
-			'settings'    => array(
-				array(
-					'id'          => 'content',
-					'label'       => __('Content', 'tallykit_taxdomain'),
-					'desc'        => '',
-					'std'         => '',
-					'type'        => 'textarea-simple',
-					'section'     => '',
-					'rows'        => '',
-					'post_type'   => '',
-					'taxonomy'    => '',
-					'class'       => '',
-					'choices'     => '',
-				)
-			),
+			
 		);
-		
+				
 		return $custom_settings;
 	}
 }

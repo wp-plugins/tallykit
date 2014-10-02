@@ -17,20 +17,40 @@ $component_folder_name = 'FrontPage';
 
 
 include('blocks/blocks.php');
-include('class-option-builder.php');
 include('class-content-builder.php');
 
-$tallykit_FrontPage = apply_filters('tallykit_FrontPage', array());
+function tallykit_frontPage_settings(){
+	$data = NULL;
+	if(file_exists(get_stylesheet_directory().'/FrontPage-settings.php')){
+		$data = include(get_stylesheet_directory().'/FrontPage-settings.php');
+	}elseif(file_exists(get_template_directory().'/FrontPage-settings.php')){
+		$data = include(get_template_directory().'/FrontPage-settings.php');
+	}
+	return $data;
+}
 
-
+$tallykit_FrontPage = tallykit_frontPage_settings();
 /*
 	Create Theme Options
 ==================================================*/
-if(is_array($tallykit_FrontPage) && !empty($$tallykit_FrontPage)){
+if(is_array($tallykit_FrontPage) && !empty($tallykit_FrontPage)){
 	foreach($tallykit_FrontPage as $option){
-		
+		$columns = $option['columns'];
+		if(is_array($columns) && !empty($columns)){
+			foreach($columns as $column){
+				$blocks = $column['blocks'];
+				if(is_array($blocks) && !empty($blocks)){
+					foreach($blocks as $block){
+						$block_class_name = 'tallykit_FrontPage_block_option_'.$block['type'];
+						if(class_exists($block_class_name)){
+							$block_class_data = new $block_class_name;
+						}
+					}
+				}
+			}
+		}// IF - $columns
 	}
-}
+} // IF - $tallykit_FrontPage
 
 
 
@@ -39,7 +59,7 @@ if(is_array($tallykit_FrontPage) && !empty($$tallykit_FrontPage)){
 ==================================================*/
 add_shortcode('frontpage', 'tallykit_FrontPage_shortcode');
 function tallykit_FrontPage_shortcode(){
-	$content = new tallykit_FrontPage_content_builder( apply_filters('tallykit_FrontPage', array()) );
+	$content = new tallykit_FrontPage_content_builder( tallykit_frontPage_settings() );
 	ob_start();
 	echo $content->render();
 	$output = ob_get_contents();
@@ -105,4 +125,10 @@ function tallykit_FrontPage_do_content(){
 add_action('wp_enqueue_scripts', 'tallykit_FrontPage_script_loader');
 function tallykit_FrontPage_script_loader(){
 	wp_enqueue_style( 'tallykit-frontpage', TALLYKIT_COMPONENTS_URL.'FrontPage/css/style.css', '', '1.0' );
+}
+
+
+add_action('admin_enqueue_scripts', 'tallykit_FrontPage_admin_script_loader');
+function tallykit_FrontPage_admin_script_loader(){
+	wp_enqueue_style( 'tallykit-frontpage', TALLYKIT_COMPONENTS_URL.'FrontPage/css/admin-style.css', '', '1.0' );
 }
