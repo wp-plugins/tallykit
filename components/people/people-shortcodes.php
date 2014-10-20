@@ -20,7 +20,8 @@ function tallykit_people_sc_grid( $atts, $content = null ) {
 			'order'            => 'DESC',
 			'ids'              => '',
 			'filter'		   => 'yes',
-			'margin'		   => '3'
+			'margin'		   => '3',
+			'pagination'		=> 'yes'
 		), $atts)
 	);
 	
@@ -276,7 +277,8 @@ function tallykit_people_sc_single( $atts, $content = null  ) {
 	
 	$query = array(
 		'post_type'      => 'tallykit_people',
-		'p'          => $id
+		'p'          => $id,
+		'posts_per_page' => 1
 	);
 	
 	ob_start();

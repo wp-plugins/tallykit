@@ -1,9 +1,9 @@
 <?php
-class tallykit_FrontPage_block_output_portfolio_grid{
+class tallykit_FrontPage_block_output_gallery_archive{
 	public $prefix;
 	
 	function __construct(){
-		$this->prefix = 'home_page_portfolio_grid_';
+		$this->prefix = 'home_page_gallery_archive_';
 	}
 	
 	
@@ -11,7 +11,6 @@ class tallykit_FrontPage_block_output_portfolio_grid{
 		$enable = tally_option($this->prefix.'enable');
 		$title = tally_option($this->prefix.'title');
 		$category = tally_option($this->prefix.'category');
-		$tag = tally_option($this->prefix.'tag');
 		$relation = tally_option($this->prefix.'relation');
 		$limit = tally_option($this->prefix.'limit');
 		$orderby = tally_option($this->prefix.'orderby');
@@ -24,10 +23,10 @@ class tallykit_FrontPage_block_output_portfolio_grid{
 		
 		
 		if($enable == 'on'):
-			echo '<div class="front_page_portfolio_grid">';
+			echo '<div class="front_page_gallery_archive">';
 				if($title != ''){ echo '<h4>'.$title.'</h4>'; }
 				
-				$output = '[tk_portfolio_grid category="'.$category.'" exclude_category="" tags="'.$tag.'" relation="'.$relation.'" limit="'.$limit.'" columns="'.$columns.'" orderby="'.$orderby.'" order="'.$order.'" ids="" filter="yes" margin="'.$margin.'" pagination="'.$pagination.'" /]';
+				$output = '[tk_album category="'.$category.'" relation="'.$relation.'" limit="'.$limit.'" columns="'.$columns.'" orderby="'.$orderby.'" order="'.$order.'" filter="'.$filter.'" margin="'.$margin.'" pagination="'.$pagination.'" /]';
 				
 				echo do_shortcode($output);
 			echo '</div>';

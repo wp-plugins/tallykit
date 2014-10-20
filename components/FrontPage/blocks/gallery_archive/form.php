@@ -1,13 +1,13 @@
 <?php
-class tallykit_FrontPage_block_option_logo_grid{
+class tallykit_FrontPage_block_option_gallery_archive{
 	public $section;
 	public $section_name;
 	public $prefix;
 	
 	function __construct(){
-		$this->section = 'home_page_logo_grid';
-		$this->section_name = 'Home Logo Grid';
-		$this->prefix = 'home_page_logo_grid_';
+		$this->section = 'home_page_gallery_archive';
+		$this->section_name = 'Home Gallery Album';
+		$this->prefix = 'home_page_gallery_archive_';
 		add_filter('option_tree_settings_args', array($this, 'options'), 20);
 	}
 	
@@ -17,7 +17,7 @@ class tallykit_FrontPage_block_option_logo_grid{
 		
 		$custom_settings['settings'][] = array(
 			'id'          => $this->prefix.'enable',
-			'label'       => __('Enable Logo Grid', 'tallykit_taxdomain'),
+			'label'       => __('Enable Gallery Album', 'tallykit_taxdomain'),
 			'desc'        => '',
 			'std'         => tally_option_std($this->prefix.'enable'),
 			'type'        => 'on_off',
@@ -101,7 +101,7 @@ class tallykit_FrontPage_block_option_logo_grid{
 			'section'     => $this->section,
 			'rows'        => '',
 			'post_type'   => '',
-			'taxonomy'    => 'tallykit_logo_category',
+			'taxonomy'    => 'tallykit_gallery_category',
 			'class'       => '',
 			'condition'   => $this->prefix.'enable'.':is(on)',
 		);	
@@ -192,7 +192,6 @@ class tallykit_FrontPage_block_option_logo_grid{
 				array('label' => 'no', 'value' => 'no'),
 			)
 		);
-		
 		
 		return $custom_settings;
 	}
