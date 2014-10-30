@@ -3,7 +3,7 @@
 Plugin Name: TallyKit
 Plugin URI: https://github.com/tallythemes/tallykit
 Description: A collection of features and functionality for <strong>Tally Framework</strong> theme.
-Version: 4.3
+Version: 4.4
 Author: TallyThemes
 Author URI: http://tallythemes.com/
 
@@ -16,7 +16,7 @@ namespace: tallykit
 
 TALLYKIT
 */
-add_action( 'after_setup_theme', 'load_tallykit', 2 );
+add_action( 'after_setup_theme', 'load_tallykit', 5);
 function load_tallykit(){
 	$path_dir = trailingslashit(str_replace('\\','/',dirname(__FILE__)));
 	$path_abs = trailingslashit(str_replace('\\','/',ABSPATH));
@@ -24,7 +24,7 @@ function load_tallykit(){
 	define('TALLYKIT', 'TallyKit' );
 	define('TALLYKIT_URL', site_url(str_replace( $path_abs, '', $path_dir )) );
 	define('TALLYKIT_DRI', $path_dir );
-	define('TALLYKIT_VERSION', 4.3 );
+	define('TALLYKIT_VERSION', 4.4 );
 	
 	define('TALLYKIT_COMPONENTS_URL', TALLYKIT_URL.'components/' );
 	define('TALLYKIT_COMPONENTS_DRI', TALLYKIT_DRI.'components/' );
@@ -35,10 +35,14 @@ function load_tallykit(){
 	define('TALLYKIT_CHILD_TPL_URL', get_stylesheet_directory_uri().'/tallykit/' );
 	define('TALLYKIT_CHILD_TPL_DRI', get_stylesheet_directory().'/tallykit/' );
 	
+	if(!defined('TK_THEME_NAME')){ define('TK_THEME_NAME', '' );}
+	
 	include('includes/acoc-loader.php');
 	include('includes/custom-functions.php'); 
 	include('includes/color-management.php');
 	include('includes/dynamic-css-loader.php');
+	include('includes/script-loader.php');
+	include('includes/dev-settings.php');
 	
 	if ( function_exists( 'acoc_forceLoadFirst' ) ) {
 		tallykit_components_loader();
