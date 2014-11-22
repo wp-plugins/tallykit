@@ -12,6 +12,9 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
+if(!defined( 'TALLYKIT_TESTIMONIAL_IMAGE_W' )){ define('TALLYKIT_TESTIMONIAL_IMAGE_W', '100'); };
+if(!defined( 'TALLYKIT_TESTIMONIAL_IMAGE_H' )){ define('TALLYKIT_TESTIMONIAL_IMAGE_H', '100'); };
+
 include('testimonial-types.php');
 include('testimonial-metabox.php');
 include('testimonial-template.php');

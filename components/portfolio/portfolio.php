@@ -12,6 +12,9 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
+if(!defined( 'TALLYKIT_PORTFOLIO_ARCHIVE_W' )){ define('TALLYKIT_PORTFOLIO_ARCHIVE_W', '680'); };
+if(!defined( 'TALLYKIT_PORTFOLIO_ARCHIVE_H' )){ define('TALLYKIT_PORTFOLIO_ARCHIVE_H', '500'); };
+
 include('portfolio-types.php');
 include('portfolio-metabox.php');
 include('portfolio-template.php');
