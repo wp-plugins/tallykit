@@ -164,6 +164,19 @@ $options[] = array(
 		array('value' => 'yes', 'label' => 'Yes'),
 	)
 );
+$options[] = array(
+	'id'		=> 'importer',
+	'class'		=> 'component-list-item',
+	'label'		=> 'Importer',
+	'type'		=> 'select',
+	'std'		=> '',
+	'des'		=> '',
+	'filter'	=> '', //sanitize_text_field, esc_attr
+	'options'	=> array(
+		array('value' => 'no', 'label' => 'No'),
+		array('value' => 'yes', 'label' => 'Yes'),
+	)
+);
 
 
 /* Shortcode List ::: buddypress

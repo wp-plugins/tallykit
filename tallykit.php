@@ -3,7 +3,7 @@
 Plugin Name: TallyKit
 Plugin URI: https://github.com/tallythemes/tallykit
 Description: A collection of features and functionality for <strong>Tally Framework</strong> theme.
-Version: 4.5
+Version: 5.0
 Author: TallyThemes
 Author URI: http://tallythemes.com/
 
@@ -24,7 +24,7 @@ function load_tallykit(){
 	define('TALLYKIT', 'TallyKit' );
 	define('TALLYKIT_URL', site_url(str_replace( $path_abs, '', $path_dir )) );
 	define('TALLYKIT_DRI', $path_dir );
-	define('TALLYKIT_VERSION', 4.5 );
+	define('TALLYKIT_VERSION', 5.0 );
 	
 	define('TALLYKIT_COMPONENTS_URL', TALLYKIT_URL.'components/' );
 	define('TALLYKIT_COMPONENTS_DRI', TALLYKIT_DRI.'components/' );
@@ -34,6 +34,12 @@ function load_tallykit(){
 	
 	define('TALLYKIT_CHILD_TPL_URL', get_stylesheet_directory_uri().'/tallykit/' );
 	define('TALLYKIT_CHILD_TPL_DRI', get_stylesheet_directory().'/tallykit/' );
+	
+	define('TALLYKIT_THEME_URL', get_template_directory_uri() );
+	define('TALLYKIT_THEME_DRI', get_template_directory() );
+	
+	define('TALLYKIT_CHILD_URL', get_stylesheet_directory_uri());
+	define('TALLYKIT_CHILD_DRI', get_stylesheet_directory());
 	
 	if(!defined('TK_THEME_NAME')){ define('TK_THEME_NAME', '' );}
 	
